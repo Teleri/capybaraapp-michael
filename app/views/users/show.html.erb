@@ -35,6 +35,7 @@
     <div class="col-sm-8">
       <div class="profile-header">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <%= render "like_button" %>
       <div class="card-body">
       <p>📍</p> <%= @user.address %>
       <br>
