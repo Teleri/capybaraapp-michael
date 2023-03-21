@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cleaning database..."
+require 'database_cleaner/active_record'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
+
 puts "Creating database..."
 
 puts "Creating categories..."
