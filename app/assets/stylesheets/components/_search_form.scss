@@ -1,0 +1,38 @@
+body {
+  background-image: url("https://res.cloudinary.com/dfmu5zwaj/image/upload/v1679136242/blurry-gradient-haikei_divpaz.png");
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+
+.search-form{
+  color: white;
+  padding: 10px 20px;
+  margin: 24px 30px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: $body-font;
+
+  .form-actions {
+    margin-top: 24px;
+  }
+
+  .search-btn {
+    width: 100%;
+    // border-radius: 20px;
+  }
+
+  .btn-primary {
+    margin-bottom: 8px;
+  }
+}
+
+.form-select {
+  padding: 0;
+  background-color: white;
+}
+
+.form-control {
+  background-color: white;
+  color: white;
+}

@@ -1,0 +1,21 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: red;
+  background-size: cover;
+  h1 {
+    color: red;
+    font-weight: bold;
+    font-size: 85px;
+  }
+  p {
+    color: red;
+    opacity: 0.8;
+    font-size: 25px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+  }
+
+}

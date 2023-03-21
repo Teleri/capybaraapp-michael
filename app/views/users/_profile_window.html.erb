@@ -1,0 +1,22 @@
+<div class="popup-container">
+  <% raise %>
+  <% if user.photo.attached? %>
+    <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+  <% else %>
+    <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+  <% end %>  
+  <div class="user-info-box">
+    <h2><%= user.first_name%> <span class="text-muted"><%= user.age %></span></h2>
+    <% user.categories.each do |c| %>
+    <p id="interest"><%= c.name %></p>
+    <% end %>
+    <% if user.favoritors.any? %>
+      <p class="favorites"><i class="fa fa-heart"></i> <%= user.favoritors.count %></p>
+      <% else %>
+      <i class="fa fa-heart favorites"></i> <%= 0 %>
+    <% end %>
+  </div>
+</div>
+<div class="info-action row">
+  <%= link_to "View Profile", user_path(user), class: "btn popup-btn btn-primary col-8 mx-auto" %>
+</div>
