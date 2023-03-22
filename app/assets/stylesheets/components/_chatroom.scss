@@ -39,30 +39,41 @@
 
   .text-right {
     text-align: right;
-    padding-left: 3%;
     margin-bottom: 10px;
-    background-color: rgb(90, 130, 120);
-    color: white;
-    width: fit-content;
-    box-shadow: 0 8px 6px -6px black;
-    margin-left: 40%;
-    padding-right: 11%;
-    }
+    justify-content: end;
+  }
 
   .text-left {
     text-align: left;
-    // position: relative;
-    padding-left: 20px;
     margin-bottom: 10px;
-    background-color: rgb(75, 120, 134);
-    color: white;
-    width: fit-content;
-    padding-right: 40px;
-    box-shadow: 0 8px 6px -6px black;
-
-
+    justify-content: start;
   }
 
+  .sender-style {
+    background-color: #5a8278;
+    color: white;
+    box-shadow: 0 8px 6px -6px black;
+    padding: 8px 20px 8px 8px;
+    border-radius: 10px 0 10px 10px;
+  }
+
+  .receiver-style {
+    background-color: #4b7886;
+    color: white;
+    box-shadow: 0 8px 6px -6px black;
+    padding: 8px 8px 8px 20px;
+    border-radius: 0 10px 10px 10px;
+  }
+
+  .timestamp {
+    opacity: .6;
+    font-size: 0.8rem;
+  }
+
+  .username {
+    line-height: 1.5rem;
+    opacity: .6;
+  }
 
 
 }
