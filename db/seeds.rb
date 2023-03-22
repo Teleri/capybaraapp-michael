@@ -34,7 +34,7 @@ puts "Creating users..."
 require "open-uri"
 
 file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679135526/marc-kleen-Iskck0kl210-unsplash_gq0zf2.jpg")
-user = User.new(first_name: "Noah", last_name: "J", age: 36, address: "134B Kingsland Rd, London E2 8DY", bio: "I have worked on some of the most iconic ad campaigns of the past decade. I am also an avid collector of vintage vinyl records and enjoy going to live music shows.", gender: "Male", horoscope: "Cancer", profession:"Creative Director", email: "noah@gmail.com", password: 12345678)
+user = User.new(first_name: "Noah", last_name: "J", age: 36, address: "134B Kingsland Rd, London E2 8DY", bio: "I have worked on some of the most iconic ad campaigns of the past decade. I am also an avid collector of vintage vinyl records and enjoy going to live music shows.", gender: "Male", horoscope: "Cancer", profession:"Creative Director", interest: "Art & Culture", email: "noah@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "noah.jpg", content_type: "image/jpg")
 user.save
 Interest.create(user_id: User.first.id, category_id: Category.first.id)

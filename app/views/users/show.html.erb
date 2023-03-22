@@ -43,14 +43,20 @@
       <%= @user.gender %>
       <br>
       <%= @user.age %>
+      <br>
+      <%= @user.horoscope %>
+      <br>
+      <%= @user.profession %>
+      <br>
           <p>Favorite things to do:</p>
-          <p>
-            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;
-                         width: 33%; text-align: center;">Yoga 🧘🏽‍♀️,</span>
-            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;
-                         width: 33%; text-align: center;">Cycling 🚴🏽‍♀️</span>
-            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;
-                         width: 33%; text-align: center;">&amp; Painting 🎨</span>
+            <% @interests.each do |interest| %>
+             <%= icon_name = icon_name_for_interest(interest) %>
+             <% if icon_name %>
+              <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;">
+               <i class="fas fa-<%= icon_name %>"></i>
+               <%= interest.name %></span></p>
+              <% end %>
+             <% end %>
       </div>
     </div>
 
