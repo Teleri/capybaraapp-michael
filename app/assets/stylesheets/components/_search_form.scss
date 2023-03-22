@@ -18,8 +18,17 @@ body {
   }
 
   .search-btn {
+    color: $navy;
     width: 100%;
-    // border-radius: 20px;
+  }
+
+  .search-btn:hover {
+    background-color: #fda15c;
+    transition: 0.3s;
+  }
+
+  .btn-alert {
+    width: 100%;
   }
 
   .btn-primary {

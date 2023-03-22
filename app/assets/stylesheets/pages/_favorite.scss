@@ -44,9 +44,8 @@
 }
 
 .favorite-content .btn:hover {
-  color: white;
-  margin-left: 36px;
-  font-size: 14px;
+  background-color: #572a6b;
+  transition: background 0.3s ease;
 }
 
 .favorite-action a {
