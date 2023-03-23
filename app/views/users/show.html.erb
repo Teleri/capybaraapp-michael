@@ -29,7 +29,7 @@
       </button>
     </div>
 
-
+    <!-- bio -->
   <div class="p-2 bd-highlight" style="border: 1px;">
   <div class="card" style="border-radius: 5px; padding: 4px 4px 4px 4px; width:  375px; height: 400px; background-color: #FFD3B1; border-color: #FFD3B1;">
     <div class="col-sm-8">
@@ -48,12 +48,13 @@
       <br>
       <%= @user.profession %>
       <br>
+       <!--  display a list of interests and their corresponding icons. -->
           <p>Favorite things to do:</p>
             <% @interests.each do |interest| %>
-             <%= icon_name = icon_name_for_interest(interest) %>
+             <% icon_name = icon_name_for_interest(interest) %>
              <% if icon_name %>
               <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;">
-               <i class="fas fa-<%= icon_name %>"></i>
+               <i class="fas fa-<%=icon_name%>"></i>
                <%= interest.name %></span></p>
               <% end %>
              <% end %>

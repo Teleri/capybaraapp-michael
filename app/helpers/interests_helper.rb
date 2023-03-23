@@ -2,7 +2,7 @@ module InterestsHelper
   def icon_name_for_interest(interest)
     case interest.name
     when "Fitness"
-      "yoga"
+      "spa"
     when "Entertainment"
       "ticket"
     when "Art & Culture"
@@ -21,6 +21,9 @@ module InterestsHelper
       "globe"
     when "Game"
       "gamepad"
+    else
+      "spa"
     end
   end
 end
+# method to determine the appropriate icon name based on the name of an interest
