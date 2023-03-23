@@ -54,7 +54,7 @@ class UsersController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
-    redirect_to controller: 'users', action: 'search_map', markers: @markers, remote: false
+    redirect_to controller: 'users', action: 'search_map', markers: @markers, remote: false, method: :post
   end
 
   def the_results
