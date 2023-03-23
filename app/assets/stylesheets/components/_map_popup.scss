@@ -5,14 +5,6 @@
     display: flex;
     padding-bottom: 0px;
   }
-
-  .popup-btn {
-    margin-top: 16px;
-    background-color: $peach;
-    border-color: $peach;
-    color: black;
-  }
-
 }
 
 .mapboxgl-popup-content div {
@@ -58,13 +50,18 @@
     margin-left: 8px;
   }
 
-  a {
+  .btn-primary {
     background: $peach;
     color: #0c2e41;
-    border-radius: 3px;
-    border-style: none;
+    border: none;
     text-decoration: none;
     align-items: center;
+    border-radius: 4px;
+  }
+
+  .btn-primary:hover {
+    background-color: #fda15c;
+    transition: 0.7s;
   }
 
   .avatar {
@@ -77,6 +74,4 @@
 
 }
 
-.mapboxgl-popup-content a:visited {text-decoration: none; }
-.mapboxgl-popup-content a:hover { text-decoration: none; }
 .mapboxgl-popup-content a:active { text-decoration: none; }
