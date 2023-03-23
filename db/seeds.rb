@@ -9,6 +9,8 @@
 puts "Cleaning database..."
 require 'database_cleaner/active_record'
 DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.allow_production = true
+DatabaseCleaner.allow_remote_database_url = true
 DatabaseCleaner.clean
 
 puts "Creating database..."
