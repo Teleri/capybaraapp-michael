@@ -27,3 +27,4 @@ module InterestsHelper
   end
 end
 # method to determine the appropriate icon name based on the name of an interest
+# ["Fitness", "Entertainment", "Food & Drink", "Community & Environment", "Travel & Outdoor", "Health & Wellbeing"]

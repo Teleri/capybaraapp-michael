@@ -1,5 +1,4 @@
   <div class= "wrapper">
-  <%# <img src="https://res.cloudinary.com/duufhyqzx/image/upload/v1679159442/blurry-gradient-haikei_xerl7v.png" alt="background" height= "775px"> %>
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
@@ -9,18 +8,34 @@
       </div>
 
       <!-- The slideshow/carousel -->
-    <div class="carousel-inner" class="card" style="margin-left: 10%; padding: 4px 4px 4px 4px; width:  310px; height: 400px;">
+    <div class="carousel-inner" style="margin-left: 10%; padding: 4px 4px 4px 4px; width:  310px; height: 400px;">
       <div class="carousel-item active">
+       <div class="position-relative">
           <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  310px; height: 400px;" >
-    </div>
+          <div class="position-absolute bottom-0 start-0 m-3" style="padding-bottom: 20px;">
+           <h2 style="font-weight:bold; color: #ffffff;"><span><%= @user.first_name %></span> <span><%= @user.last_name %></span>, <span><%= @user.age %></span></h2>
+          </div>
+       </div>
+      </div>
+
         <div class="carousel-item">
+         <div class="position-relative">
           <img src="https://media.glamour.com/photos/5704338973eb5f7a37a3900d/master/w_1600,c_limit/weddings-2016-03-11-v-shay-mitchell-vacation-pictures-0314-courtesy-shay-mitchell-main.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  310px; height: 400px;" >
+          <div class="position-absolute bottom-0 start-0 m-3" style="padding-bottom: 20px;">
+           <h2 style="font-weight:bold; color: #ffffff;"><span><%= @user.first_name %></span> <span><%= @user.last_name %></span>, <span><%= @user.age %></span></h2>
+          </div>
+         </div>
         </div>
 
         <div class="carousel-item">
+         <div class="position-relative">
           <img src="https://www.royalcaribbean.com/connect/wp-content/uploads/2017/10/Shay-On-A-Ship-High-Res.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  310px; height: 400px;" >
+          <div class="position-absolute bottom-0 start-0 m-3" style="padding-bottom: 20px;">
+           <h2 style="font-weight:bold; color: #ffffff;"><span><%= @user.first_name %></span> <span><%= @user.last_name %></span>, <span><%= @user.age %></span></h2>
+          </div>
+         </div>
         </div>
-      </div>
+       </div>
 
       <!-- Left and right controls/icons -->
       <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
@@ -32,36 +47,39 @@
     </div>
 
     <!-- bio -->
-  <div class="p-2 bd-highlight" style="border: 1px;">
-  <div class="card" style="border-radius: 5px; padding: 4px 4px 4px 4px; width:  375px; height: 350px; background-color: #FFD3B1; border-color: #FFD3B1;">
-    <div class="col-sm-8">
-      <div class="profile-header">
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-        <%= render "like_button" %>
-      <div class="card-body">
-      <p>📍</p> <%= @user.address %>
-      <br>
-      <%= @user.bio %>
-      <br>
-      <%= @user.gender %>
-      <br>
-      <%= @user.age %>
-      <br>
-      <%= @user.horoscope %>
-      <br>
-      <%= @user.profession %>
-      <br>
-       <!--  display a list of interests and their corresponding icons. -->
-          <p>Favorite things to do:</p>
-            <% @interests.each do |interest| %>
-             <% icon_name = icon_name_for_interest(interest) %>
-             <% if icon_name %>
-              <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;">
-               <i class="fas fa-<%=icon_name%>"></i>
-               <%= interest.name %></span></p>
-              <% end %>
-             <% end %>
+    <div class="p-2 bd-highlight" style="border: 1px;">
+     <div class="profile-header" style="border-radius: 5px; padding: 4px; width: 375px; height: 350px; padding-inline: 45px; background-color: #FFD3B1; border-color: #FFD3B1;">
+    <div class="bio-header" style="display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <i class="fa-solid fa-quote-left"></i>
+        <p>about <%= @user.first_name %></p>
       </div>
+      <h2><%= render "like_button" %></h2>
+    </div>
+    <div class="bio-card" style="line-height: 2">
+     📍 <%= @user.address %>
+     <br>
+     <i class="fa-solid fa-venus"></i> <%= @user.gender %>
+     <br>
+     <i class="fa-solid fa-star"></i> <%= @user.horoscope %>
+     <br>
+     <i class="fa-solid fa-briefcase"></i> <%= @user.profession %>
+     <br>
+     <%= @user.bio %>
+     <br>
+       <!--  display a list of interests and their corresponding icons. -->
+        <p style="margin-top: 10x;">Favorite things to do:</p>
+        <% @interests.each do |interest| %>
+           <% icon_name = icon_name_for_interest(interest) %>
+           <% if icon_name %>
+             <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; margin-right: 10px;">
+               <i class="fas fa-<%=icon_name%>"></i>
+               <%= interest.name %>
+             </span>
+           <% end %>
+        <% end %>
+      </div>
+     </div>
     </div>
 
 
@@ -72,3 +90,4 @@
     <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, chatroom_path(@user) %>
     <%= link_to ('<i class="fa fa-search"></i>').html_safe, new_user_session_path %>
   </div>
+</div>
