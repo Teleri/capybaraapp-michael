@@ -4,7 +4,7 @@
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
 >
   <h1><%= @chatroom.name %></h1>
-  <div class="messages" style="height: 1200px" data-chatroom-subscription-target="messages">
+  <div class="messages" style="height: 800px" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'text-right' : 'text-left' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
