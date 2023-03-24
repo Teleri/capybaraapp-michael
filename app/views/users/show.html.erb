@@ -56,17 +56,16 @@
       </div>
       <h2><%= render "like_button" %></h2>
     </div>
-    <div class="bio-card" style="line-height: 2">
-     📍 <%= @user.address %>
-     <br>
-     <i class="fa-solid fa-venus"></i> <%= @user.gender %>
-     <br>
-     <i class="fa-solid fa-star"></i> <%= @user.horoscope %>
-     <br>
-     <i class="fa-solid fa-briefcase"></i> <%= @user.profession %>
-     <br>
-     <%= @user.bio %>
-     <br>
+    <div class="bio-card">
+      <p>📍 Hoxton, London</p>
+      <i class="fa-solid fa-venus"></i> <%= @user.gender %>
+      <br>
+      <i class="fa-solid fa-star"></i> <%= @user.horoscope %>
+      <br>
+      <i class="fa-solid fa-briefcase"></i> <%= @user.profession %>
+      <br>
+      <%= @user.bio %>
+      <br>
        <!--  display a list of interests and their corresponding icons. -->
         <p style="margin-top: 10x;">Favorite things to do:</p>
         <% @interests.each do |interest| %>
