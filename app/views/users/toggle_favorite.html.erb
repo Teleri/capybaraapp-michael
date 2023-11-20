@@ -1,3 +1,4 @@
+<div class="wrapper">
 <h3 class="favorite-header mt-3 mx-4 mb-3">Who Likes You</h1>
   <% @favoritors.each do |u| %>
     <div class="favorite-users">
@@ -39,3 +40,4 @@
     <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, chatroom_path %>
     <%= link_to ('<i class="fa fa-search"></i>').html_safe, new_user_session_path %>
   </div>
+</div>

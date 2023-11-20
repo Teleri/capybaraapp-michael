@@ -1,5 +1,6 @@
-  <div class= "wrapper">
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+<div>
+  <div class= "user-profile">
+    <div id="demo" class="carousel slide d-flex justify-content-center" data-bs-ride="carousel">
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -8,7 +9,7 @@
       </div>
 
       <!-- The slideshow/carousel -->
-    <div class="carousel-inner" style="margin-left: 10%; padding: 4px 4px 4px 4px; width:  310px; height: 400px;">
+    <div class="carousel-inner" style="padding: 4px 4px 4px 4px; width:  310px; height: 400px;">
       <div class="carousel-item active">
        <div class="position-relative">
           <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  310px; height: 400px;" >
@@ -47,46 +48,57 @@
     </div>
 
     <!-- bio -->
-    <div class="p-2 bd-highlight" style="border: 1px;">
-     <div class="profile-header" style="border-radius: 5px; padding: 4px; width: 375px; height: 350px; padding-inline: 45px; background-color: #FFD3B1; border-color: #FFD3B1;">
-    <div class="bio-header" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="mt-3 p-2 bd-highlight d-flex justify-content-center" style="border: 1px;">
+     <div class="profile-section">
+    <div class="bio-header mt-3" style="display: flex; align-items: center; justify-content: space-between;">
       <div>
-        <i class="fa-solid fa-quote-left"></i>
-        <p>about <%= @user.first_name %></p>
+        <p>📍 Hoxton, London</p>
       </div>
       <h2><%= render "like_button" %></h2>
     </div>
     <div class="bio-card">
-      <p>📍 Hoxton, London</p>
-      <i class="fa-solid fa-venus"></i> <%= @user.gender %>
-      <br>
-      <i class="fa-solid fa-star"></i> <%= @user.horoscope %>
-      <br>
-      <i class="fa-solid fa-briefcase"></i> <%= @user.profession %>
-      <br>
-      <%= @user.bio %>
-      <br>
+      <div class="bio-card_icon d-flex">
+        <div class="icon">
+          <i class="fa-solid fa-venus"></i> <%= @user.gender %>
+        </div>
+        <br>
+        <div class="icon px-3">
+          <i class="fa-solid fa-star"></i> <%= @user.horoscope %>
+        </div>
+        <br>
+        <div class="icon">
+          <i class="fa-solid fa-briefcase"></i> <%= @user.profession %>
+        </div>
+        <br>
+      </div>
+      <p class="user-bio"><%= @user.bio %></p>
+
+
        <!--  display a list of interests and their corresponding icons. -->
-        <p style="margin-top: 10x;">Favorite things to do:</p>
-        <% @interests.each do |interest| %>
-           <% icon_name = icon_name_for_interest(interest) %>
-           <% if icon_name %>
-             <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; margin-right: 10px;">
-               <i class="fas fa-<%=icon_name%>"></i>
-               <%= interest.name %>
-             </span>
-           <% end %>
-        <% end %>
+      <div class="user-interests_section">
+        <h3 style="margin-top: 10x;">Interests: </h3>
+        <div class="user-interests-category">
+          <% @interests.each do |interest| %>
+            <div class="user-interest">
+              <% icon_name = icon_name_for_interest(interest) %>
+              <% if icon_name %>
+                <%# <span class="user-interests_category"> %>
+                  <i class="fas fa-<%=icon_name%>"></i>
+                  <%= interest.name %>
+                <%# </span> %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
      </div>
     </div>
+  </div>
 
-
-
+</div>
   <div class="icon-bar">
     <%= link_to ('<i class="fa fa-home"></i>').html_safe, root_path %>
     <%= link_to ('<i class="fa fa-heart"></i>').html_safe, toggle_favorite_user_path %>
     <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, chatroom_path(@user) %>
     <%= link_to ('<i class="fa fa-search"></i>').html_safe, new_user_session_path %>
   </div>
-</div>

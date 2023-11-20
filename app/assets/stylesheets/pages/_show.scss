@@ -1,0 +1,22 @@
+.profile-section {
+  width: 700px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.user-interests-category {
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 600px) {
+    display: grid;
+  }
+
+}
+
+.user-interest {
+  border-radius: 50px;
+  background-color: #d0fbfd;
+  padding: 0.5em 1em;
+  margin-bottom: .75em;
+}
